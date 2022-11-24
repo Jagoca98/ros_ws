@@ -1,5 +1,4 @@
 #include <ros/ros.h>
-#include <pthread.h>
 #include <std_msgs/String.h>
 #include <vector>
 #include <interaccion/inf_personal_usuario.h>
@@ -12,7 +11,10 @@ private:
     ros::NodeHandle nh_;
     ros::Publisher pub_;
     ros::Rate rate_;
-    interaccion::inf_personal_usuario persona;
+    interaccion::inf_personal_usuario persona_;
+    pthread_t lectura;
+
+    void leer_persona(interaccion::inf_personal_usuario &persona);
     
 
 public:
