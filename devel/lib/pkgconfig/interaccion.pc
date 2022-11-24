@@ -1,8 +1,0 @@
-prefix=/home/jaime/Desktop/ros_ws/devel
-
-Name: interaccion
-Description: Description of interaccion
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
