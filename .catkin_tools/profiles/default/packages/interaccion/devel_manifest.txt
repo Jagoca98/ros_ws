@@ -1,5 +1,0 @@
-interaccion
-/home/jaime/Desktop/ros_ws/devel/.private/interaccion/cmake.lock /home/jaime/Desktop/ros_ws/devel/./cmake.lock
-/home/jaime/Desktop/ros_ws/devel/.private/interaccion/share/interaccion/cmake/interaccionConfig.cmake /home/jaime/Desktop/ros_ws/devel/share/interaccion/cmake/interaccionConfig.cmake
-/home/jaime/Desktop/ros_ws/devel/.private/interaccion/share/interaccion/cmake/interaccionConfig-version.cmake /home/jaime/Desktop/ros_ws/devel/share/interaccion/cmake/interaccionConfig-version.cmake
-/home/jaime/Desktop/ros_ws/devel/.private/interaccion/lib/pkgconfig/interaccion.pc /home/jaime/Desktop/ros_ws/devel/lib/pkgconfig/interaccion.pc
