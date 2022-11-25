@@ -56,7 +56,12 @@
         "cinttypes": "cpp",
         "typeinfo": "cpp",
         "list": "cpp",
-        "typeindex": "cpp"
+        "typeindex": "cpp",
+        "csignal": "cpp",
+        "unordered_set": "cpp",
+        "numeric": "cpp",
+        "hash_map": "cpp",
+        "hash_set": "cpp"
     },
     "python.autoComplete.extraPaths": [
         "/home/jaime/Desktop/ros_ws/devel/lib/python2.7/dist-packages",

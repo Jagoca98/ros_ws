@@ -9,7 +9,10 @@
         "/home/jaime/Desktop/ros_ws/devel/include/**",
         "/opt/ros/melodic/include/**",
         "/home/jaime/Desktop/ros_ws/src/interaccion/include/**",
-        "/usr/include/**"
+        "/usr/include/**",
+        "/home/jaime/Desktop/ros_ws/src/interaccion/**",
+        "$(workspaceFolder)/**"
+     
       ],
       "name": "ROS",
       "intelliSenseMode": "gcc-x64",

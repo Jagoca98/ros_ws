@@ -14,7 +14,7 @@ private:
     interaccion::inf_personal_usuario persona_;
     pthread_t lectura;
 
-    void leer_persona(interaccion::inf_personal_usuario &persona);
+    interaccion::inf_personal_usuario leer_persona(void);
     
 
 public:
