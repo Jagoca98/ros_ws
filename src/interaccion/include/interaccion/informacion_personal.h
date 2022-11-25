@@ -15,6 +15,7 @@ private:
     pthread_t lectura;
 
     interaccion::inf_personal_usuario leer_persona(void);
+    bool isNumber(const std::string& s);
     
 
 public:
