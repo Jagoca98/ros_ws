@@ -55,6 +55,7 @@ add_message_files(
   FILES
   inf_personal_usuario.msg
   pos_usuario.msg
+  usuario.msg
 #   Message2.msg
 )
 
@@ -129,6 +130,8 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 add_library(informacion_personal src/informacion_personal.cpp)
 add_library(emocion_usuario src/emocion_usuario.cpp)
 add_library(posicion_usuario src/posicion_usuario.cpp)
+add_library(empaquetador src/empaquetador.cpp)
+
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -137,10 +140,14 @@ add_library(posicion_usuario src/posicion_usuario.cpp)
 add_dependencies(informacion_personal ${informacion_personal_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(emocion_usuario ${emocion_usuario_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(posicion_usuario ${posicion_usuario_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(empaquetador ${empaquetador_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
 
 target_link_libraries(informacion_personal ${catkin_LIBRARIES})
 target_link_libraries(emocion_usuario ${catkin_LIBRARIES})
 target_link_libraries(posicion_usuario ${catkin_LIBRARIES})
+target_link_libraries(empaquetador ${catkin_LIBRARIES})
+
 
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
@@ -148,6 +155,7 @@ target_link_libraries(posicion_usuario ${catkin_LIBRARIES})
 add_executable(informacion_personal_node src/informacion_personal_node.cpp)
 add_executable(emocion_usuario_node src/emocion_usuario_node.cpp)
 add_executable(posicion_usuario_node src/posicion_usuario_node.cpp)
+add_executable(empaquetador_node src/empaquetador_node.cpp)
 
 
 ## Rename C++ executable without prefix
@@ -162,6 +170,8 @@ add_executable(posicion_usuario_node src/posicion_usuario_node.cpp)
 add_dependencies(informacion_personal_node ${informacion_personal_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(emocion_usuario_node ${emocion_usuario_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(posicion_usuario_node ${posicion_usuario_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(empaquetador_node ${empaquetador_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
 
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
@@ -170,6 +180,7 @@ add_dependencies(posicion_usuario_node ${posicion_usuario_EXPORTED_TARGETS} ${ca
 target_link_libraries(informacion_personal_node informacion_personal)
 target_link_libraries(emocion_usuario_node emocion_usuario)
 target_link_libraries(posicion_usuario_node posicion_usuario)
+target_link_libraries(empaquetador_node empaquetador)
 
 #############
 ## Install ##

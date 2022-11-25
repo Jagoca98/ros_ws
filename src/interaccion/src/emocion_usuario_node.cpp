@@ -2,7 +2,7 @@
 
 int main(int argc, char** argv){
 
-    ros::init(argc, argv, "cpp_sub");
+    ros::init(argc, argv, "emocion_node");
     ros::NodeHandle nh;
     ros::Rate rate(1);
     emocion_usuario lista(nh, rate);
