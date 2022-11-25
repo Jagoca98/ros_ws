@@ -126,18 +126,22 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 #   src/${PROJECT_NAME}/interaccion.cpp
 # )
 add_library(informacion_personal src/informacion_personal.cpp)
+add_library(emocion_usuario src/emocion_usuario.cpp)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
 # add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(informacion_personal ${informacion_personal_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(emocion_usuario ${emocion_usuario_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(informacion_personal ${catkin_LIBRARIES})
+target_link_libraries(emocion_usuario ${catkin_LIBRARIES})
 
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(informacion_personal_node src/informacion_personal_node.cpp)
+add_executable(emocion_usuario_node src/emocion_usuario_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -149,14 +153,14 @@ add_executable(informacion_personal_node src/informacion_personal_node.cpp)
 ## same as for the library above
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(informacion_personal_node ${informacion_personal_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
+add_dependencies(emocion_usuario_node ${emocion_usuario_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
 target_link_libraries(informacion_personal_node informacion_personal)
-
+target_link_libraries(emocion_usuario_node emocion_usuario)
 
 #############
 ## Install ##

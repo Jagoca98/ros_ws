@@ -1,3 +1,4 @@
 <launch>
     <node pkg="interaccion" type="informacion_personal_node" name="informacion_personal_nodo" output="screen"/>
+    <!-- <node pkg="interaccion" type="emocion_usuario_node" name="emocion_usuario_nodo" output="screen"/> -->
 </launch>
