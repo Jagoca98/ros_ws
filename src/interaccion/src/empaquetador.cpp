@@ -46,7 +46,7 @@ interaccion::usuario empaquetador::crear_mensaje(void){
         usuario.posicion.z = posicion_.z;
         infPersonal_update = posicion_update = emocion_update = false;
         updatePub = true;
-        ROS_INFO("Actualizamos!!");
+        ROS_DEBUG("Actualizamos!!");
     }
     return usuario;
 }
