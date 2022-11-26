@@ -144,6 +144,14 @@ add_dependencies(posicion_usuario ${posicion_usuario_EXPORTED_TARGETS} ${catkin_
 add_dependencies(empaquetador ${empaquetador_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(dialogo ${dialogo_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
+
+add_dependencies(informacion_personal interaccion_generate_messages_cpp)
+add_dependencies(emocion_usuario interaccion_generate_messages_cpp)
+add_dependencies(posicion_usuario interaccion_generate_messages_cpp)
+add_dependencies(empaquetador interaccion_generate_messages_cpp)
+add_dependencies(dialogo interaccion_generate_messages_cpp)
+
+
 target_link_libraries(informacion_personal ${catkin_LIBRARIES})
 target_link_libraries(emocion_usuario ${catkin_LIBRARIES})
 target_link_libraries(posicion_usuario ${catkin_LIBRARIES})

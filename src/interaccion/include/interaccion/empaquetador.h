@@ -2,8 +2,7 @@
 #include <std_msgs/String.h>
 #include <vector>
 #include <interaccion/usuario.h>
-#include <interaccion/emocion_usuario.h>
-#include <interaccion/informacion_personal.h>
+#include <interaccion/inf_personal_usuario.h>
 
 
 class empaquetador
