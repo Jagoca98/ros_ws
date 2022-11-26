@@ -2,6 +2,6 @@
     <node pkg="interaccion" type="informacion_personal_node" name="informacion_personal_nodo" output="screen" launch-prefix="gnome-terminal --command"/>
     <node pkg="interaccion" type="emocion_usuario_node" name="emocion_usuario_nodo" output="screen" launch-prefix="gnome-terminal --command"/>
     <node pkg="interaccion" type="posicion_usuario_node" name="posicion_usuario_nodo" output="screen" launch-prefix="gnome-terminal --command"/>
-    <node pkg="interaccion" type="empaquetador_node" name="empaquetador_nodo" output="screen" launch-prefix="gnome-terminal --command"/>
+    <node pkg="interaccion" type="empaquetador_node" name="empaquetador_nodo" output="screen"/>
     <node pkg="interaccion" type="dialogo_node" name="dialogo_nodo" output="screen"/>
 </launch>
