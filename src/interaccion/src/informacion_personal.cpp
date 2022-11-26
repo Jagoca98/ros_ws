@@ -49,7 +49,7 @@ interaccion::inf_personal_usuario informacion_personal::leer_persona(void){
 
 
 void informacion_personal::run(void){
-    ROS_INFO("Hola");
+    std::cout << ("\t \t \t \t INFORMACION PERSONAL") << std::endl;
     while(ros::ok()){
         persona_ = leer_persona();
         pub_.publish(persona_);

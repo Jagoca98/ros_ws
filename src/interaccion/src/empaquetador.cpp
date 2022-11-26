@@ -54,7 +54,7 @@ interaccion::usuario empaquetador::crear_mensaje(void){
 
 
 void empaquetador::run(void){
-    ROS_INFO("Hola");
+    std::cout << ("\t \t \t \t EMPAQUETADOR") << std::endl;
     while(ros::ok()){
         usuario_ = crear_mensaje();
         if(updatePub){

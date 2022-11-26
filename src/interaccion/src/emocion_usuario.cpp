@@ -19,7 +19,7 @@ std::string emocion_usuario::leer_emocion(void){
 
 
 void emocion_usuario::run(void){
-    ROS_INFO("Hola");
+    std::cout << ("\t \t \t \t EMOCION DEL USUARIO") << std::endl;
     while(ros::ok()){
         emocion_.data = leer_emocion();
         pub_.publish(emocion_);
