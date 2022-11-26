@@ -19,7 +19,8 @@ void dialogo::callback(const interaccion::usuario &msg){
 }
 
 void dialogo::imprimir(const interaccion::usuario &usuario){
-    ROS_INFO_STREAM(usuario);
+    // ROS_INFO_STREAM(usuario);
+    std::cout << usuario;
 
 }
 
