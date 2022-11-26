@@ -144,7 +144,7 @@ add_dependencies(posicion_usuario ${posicion_usuario_EXPORTED_TARGETS} ${catkin_
 add_dependencies(empaquetador ${empaquetador_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(dialogo ${dialogo_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-
+## IMPORTANTE PARA PODER COMPILAR LOS MENSAJES ANTES QUE EL SOURCE
 add_dependencies(informacion_personal interaccion_generate_messages_cpp)
 add_dependencies(emocion_usuario interaccion_generate_messages_cpp)
 add_dependencies(posicion_usuario interaccion_generate_messages_cpp)
