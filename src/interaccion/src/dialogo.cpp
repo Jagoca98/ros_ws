@@ -25,7 +25,7 @@ void dialogo::imprimir(const interaccion::usuario &usuario){
 }
 
 void dialogo::run(void){
-    std::cout << ("\t \t \t \t DIALOGO") << std::endl;
+    std::cout << ("\t\t\t\tDIALOGO") << std::endl;
     while(ros::ok()){
         if(update_){
             imprimir(usuario_);

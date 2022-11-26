@@ -42,7 +42,7 @@ interaccion::pos_usuario posicion_usuario::leer_posicion(void){
 
 
 void posicion_usuario::run(void){
-    std::cout << ("\t \t \t \t POSICION DEL USUARIO") << std::endl;
+    std::cout << ("\t\t\t\tPOSICION DEL USUARIO") << std::endl;
     while(ros::ok()){
         posicion_ = leer_posicion();
         pub_.publish(posicion_);
