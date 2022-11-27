@@ -132,8 +132,6 @@ add_library(emocion_usuario src/emocion_usuario.cpp)
 add_library(posicion_usuario src/posicion_usuario.cpp)
 add_library(empaquetador src/empaquetador.cpp)
 add_library(dialogo src/dialogo.cpp)
-add_library(matematico src/matematico.cpp)
-
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -144,7 +142,7 @@ add_dependencies(emocion_usuario ${emocion_usuario_EXPORTED_TARGETS} ${catkin_EX
 add_dependencies(posicion_usuario ${posicion_usuario_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(empaquetador ${empaquetador_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(dialogo ${dialogo_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(matematico ${matematico_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
 
 
 ## IMPORTANTE PARA PODER COMPILAR LOS MENSAJES ANTES QUE EL SOURCE
@@ -153,7 +151,7 @@ add_dependencies(emocion_usuario interaccion_generate_messages_cpp)
 add_dependencies(posicion_usuario interaccion_generate_messages_cpp)
 add_dependencies(empaquetador interaccion_generate_messages_cpp)
 add_dependencies(dialogo interaccion_generate_messages_cpp)
-add_dependencies(matematico interaccion_generate_messages_cpp)
+
 
 
 target_link_libraries(informacion_personal ${catkin_LIBRARIES})
@@ -161,7 +159,7 @@ target_link_libraries(emocion_usuario ${catkin_LIBRARIES})
 target_link_libraries(posicion_usuario ${catkin_LIBRARIES})
 target_link_libraries(empaquetador ${catkin_LIBRARIES})
 target_link_libraries(dialogo ${catkin_LIBRARIES})
-target_link_libraries(matematico ${catkin_LIBRARIES})
+
 
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
@@ -171,7 +169,7 @@ add_executable(emocion_usuario_node src/emocion_usuario_node.cpp)
 add_executable(posicion_usuario_node src/posicion_usuario_node.cpp)
 add_executable(empaquetador_node src/empaquetador_node.cpp)
 add_executable(dialogo_node src/dialogo_node.cpp)
-add_executable(matematico_node src/matematico_node.cpp)
+add_executable(multiplica_server src/multiplica_server.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -187,7 +185,7 @@ add_dependencies(emocion_usuario_node ${emocion_usuario_EXPORTED_TARGETS} ${catk
 add_dependencies(posicion_usuario_node ${posicion_usuario_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(empaquetador_node ${empaquetador_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(dialogo_node ${dialogo_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(matematico_node ${matematico_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(multiplica_server interaccion_gencpp)
 
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
@@ -198,7 +196,7 @@ target_link_libraries(emocion_usuario_node emocion_usuario)
 target_link_libraries(posicion_usuario_node posicion_usuario)
 target_link_libraries(empaquetador_node empaquetador)
 target_link_libraries(dialogo_node dialogo)
-target_link_libraries(matematico_node matematico)
+target_link_libraries(multiplica_server ${catkin_LIBRARIES})
 
 #############
 ## Install ##
@@ -256,6 +254,3 @@ target_link_libraries(matematico_node matematico)
 # catkin_add_nosetests(test)
 
 
-add_executable(multiplica_server src/multiplica_server.cpp)
-target_link_libraries(multiplica_server ${catkin_LIBRARIES})
-add_dependencies(multiplica_server interaccion_gencpp)
