@@ -3,8 +3,13 @@
 dialogo::dialogo(ros::NodeHandle nh, ros::Rate rate):nh_(nh), rate_(rate)
 {
     sub_ = nh_.subscribe("/user_topic", 1000, &dialogo::callback, this);
+    sub_alive_ = nh_.subscribe("still_alive", 1000, &dialogo::callback_alive, this);
+    pubStart_ = nh_.advertise<std_msgs::String>("start_topic", 1000);
+    pubReset_ = nh_.advertise<std_msgs::String>("reset_topic", 1000);
     multiply_ = nh_.serviceClient<interaccion::multiplicador>("multiplicar");
     update_ = false;
+    firstTime_ = true;
+    msg_.data = "GoodMorning ut";
 }
 
 void dialogo::callback(const interaccion::usuario &msg){
@@ -17,6 +22,19 @@ void dialogo::callback(const interaccion::usuario &msg){
     usuario_.posicion.z = msg.posicion.z;
     ROS_DEBUG_STREAM("Lectura correcta");
     update_ = true;
+    if(firstTime_){
+        firstTime_ = false;
+        pubStart_.publish(msg_);
+        msg_.data = "GoodMorning x6";
+    }else{
+        pubReset_.publish(msg_);
+    }
+}
+
+void dialogo::callback_alive(const std_msgs::Bool &msg){
+    if(msg.data){
+        std::cout << "El reloj sigue vivo" << std::endl;
+    }
 }
 
 void dialogo::multiply(void){
