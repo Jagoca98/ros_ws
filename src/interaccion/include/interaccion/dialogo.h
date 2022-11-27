@@ -20,6 +20,7 @@ private:
     interaccion::usuario usuario_;
     std_msgs::String msg_;
     bool update_, firstTime_;
+    std::string text_, command_;
 
     void multiply(void);
     void callback(const interaccion::usuario &msg); 

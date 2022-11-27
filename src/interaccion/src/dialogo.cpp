@@ -34,6 +34,9 @@ void dialogo::callback(const interaccion::usuario &msg){
 void dialogo::callback_alive(const std_msgs::Bool &msg){
     if(msg.data){
         std::cout << "El reloj sigue vivo" << std::endl;
+        text_ = "El reloj sigue vivo";
+        command_ = "espeak -v es \"" + text_ +"\"";
+        system(command_.c_str());
     }
 }
 
@@ -51,7 +54,29 @@ void dialogo::multiply(void){
 void dialogo::imprimir(const interaccion::usuario &usuario){
     // ROS_INFO_STREAM(usuario);
     std::cout << usuario;
+    text_ = "Nombre: \"" + usuario.infPersonal.nombre + "\"";
+    command_ = "espeak -v es \"" + text_ +"\"";
+    system(command_.c_str());
+    text_ = "Edad: \"" + std::to_string(usuario.infPersonal.edad) + "\"";
+    command_ = "espeak -v es \"" + text_ +"\"";
+    system(command_.c_str());
+
+    for(int i=0; i<usuario.infPersonal.idiomas.size(); i++){
+        text_ = "Idioma \"" + std::to_string(i) + usuario.infPersonal.idiomas[i] + "\"";
+        command_ = "espeak -v es \"" + text_ +"\"";
+        system(command_.c_str());
+    }
+    text_ = "Emocion: \"" + usuario.emocion + "\"";
+    command_ = "espeak -v es \"" + text_ +"\"";
+    system(command_.c_str());
+    text_ = "Poscion: \"" + std::to_string(usuario.posicion.x) + "\"," + std::to_string(usuario.posicion.y) + "\"," + std::to_string(usuario.posicion.z) + "\"";
+    command_ = "espeak -v es \"" + text_ +"\"";
+    system(command_.c_str());
+
     std::cout << "Edad x2: " << srv.response.resultado << std::endl;
+    text_ = "Edad por 2: \"" + std::to_string(srv.response.resultado) + "\"";
+    command_ = "espeak -v es \"" + text_ +"\"";
+    system(command_.c_str());
 }
 
 void dialogo::run(void){
