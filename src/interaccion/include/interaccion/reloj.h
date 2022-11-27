@@ -14,12 +14,14 @@ private:
     ros::Subscriber sub_reset_, sub_start_;
     ros::Rate rate_;
     ros::WallTime start_, end_;
-    std_msgs::Bool firstMsg_;
+    ros::Timer timer_;
+    std_msgs::Bool firstMsg_, still_alive_;
     double execution_time_;
     boost::posix_time::ptime datetime_;
 
 
     void callback(const std_msgs::String &msg);
+    void timerCallback(const ros::TimerEvent &event);
     void imprimirHora(void);
     
 public:

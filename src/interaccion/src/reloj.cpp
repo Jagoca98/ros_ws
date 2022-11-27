@@ -5,7 +5,9 @@ reloj::reloj(ros::NodeHandle nh, ros::Rate rate):nh_(nh), rate_(rate)
     pub_ = nh_.advertise<std_msgs::Bool>("still_alive", 1000);
     sub_reset_ = nh_.subscribe("/reset_topic", 1000, &reloj::callback, this);
     sub_start_ = nh_.subscribe("/start_topic", 1000, &reloj::callback, this);
+    timer_ =nh_.createTimer(ros::Duration(60), &reloj::timerCallback, this);
     firstMsg_.data = true;
+    still_alive_.data = true;
 }
 
 void reloj::callback(const std_msgs::String &msg){
@@ -14,6 +16,10 @@ void reloj::callback(const std_msgs::String &msg){
     }
     start_ = ros::WallTime::now();
     ROS_DEBUG_STREAM("Lectura correcta");
+}
+
+void reloj::timerCallback(const ros::TimerEvent &event){
+    pub_.publish(still_alive_);
 }
 
 void reloj::imprimirHora(void){
