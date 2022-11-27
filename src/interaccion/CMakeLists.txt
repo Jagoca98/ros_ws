@@ -132,6 +132,7 @@ add_library(emocion_usuario src/emocion_usuario.cpp)
 add_library(posicion_usuario src/posicion_usuario.cpp)
 add_library(empaquetador src/empaquetador.cpp)
 add_library(dialogo src/dialogo.cpp)
+add_library(reloj src/reloj.cpp)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -142,7 +143,7 @@ add_dependencies(emocion_usuario ${emocion_usuario_EXPORTED_TARGETS} ${catkin_EX
 add_dependencies(posicion_usuario ${posicion_usuario_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(empaquetador ${empaquetador_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(dialogo ${dialogo_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
+add_dependencies(reloj ${dialogo_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 
 ## IMPORTANTE PARA PODER COMPILAR LOS MENSAJES ANTES QUE EL SOURCE
@@ -159,7 +160,7 @@ target_link_libraries(emocion_usuario ${catkin_LIBRARIES})
 target_link_libraries(posicion_usuario ${catkin_LIBRARIES})
 target_link_libraries(empaquetador ${catkin_LIBRARIES})
 target_link_libraries(dialogo ${catkin_LIBRARIES})
-
+target_link_libraries(reloj ${catkin_LIBRARIES})
 
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
@@ -170,6 +171,7 @@ add_executable(posicion_usuario_node src/posicion_usuario_node.cpp)
 add_executable(empaquetador_node src/empaquetador_node.cpp)
 add_executable(dialogo_node src/dialogo_node.cpp)
 add_executable(multiplica_server src/multiplica_server.cpp)
+add_executable(reloj_node src/reloj_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -186,7 +188,7 @@ add_dependencies(posicion_usuario_node ${posicion_usuario_EXPORTED_TARGETS} ${ca
 add_dependencies(empaquetador_node ${empaquetador_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(dialogo_node ${dialogo_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(multiplica_server interaccion_gencpp)
-
+add_dependencies(reloj_node ${reloj_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
@@ -196,6 +198,7 @@ target_link_libraries(emocion_usuario_node emocion_usuario)
 target_link_libraries(posicion_usuario_node posicion_usuario)
 target_link_libraries(empaquetador_node empaquetador)
 target_link_libraries(dialogo_node dialogo)
+target_link_libraries(reloj_node reloj)
 target_link_libraries(multiplica_server ${catkin_LIBRARIES})
 
 #############
