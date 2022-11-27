@@ -3,5 +3,8 @@
     <node pkg="interaccion" type="emocion_usuario_node" name="emocion_usuario_nodo" output="screen" launch-prefix="gnome-terminal --command"/>
     <node pkg="interaccion" type="posicion_usuario_node" name="posicion_usuario_nodo" output="screen" launch-prefix="gnome-terminal --command"/>
     <node pkg="interaccion" type="empaquetador_node" name="empaquetador_nodo"/>
-    <node pkg="interaccion" type="dialogo_node" name="dialogo_nodo" output="screen" launch-prefix="gnome-terminal --command"/>/>
+    <node pkg="interaccion" type="dialogo_node" name="dialogo_nodo" output="screen" launch-prefix="gnome-terminal --command"/>
+    <node pkg="interaccion" type="matematico_node" name="matematico_nodo" output="screen" launch-prefix="gnome-terminal --command"/>
+    <node pkg="interaccion" type="multiplica_server" name="multiplica_server"/>
 </launch>
+
