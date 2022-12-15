@@ -7,6 +7,12 @@
 
 class reloj
 {
+/**
+ * @class Clock
+ * @brief It display the UTC and Local format time at a rate of 3Hz.
+ * Also it sends a msgs in /still_alive topic each minute.
+ * 
+ */
 private:
     /* data */
     ros::NodeHandle nh_;
@@ -19,9 +25,24 @@ private:
     double execution_time_;
     boost::posix_time::ptime datetime_;
 
-
+    /**
+     * @brief Receives messages from /reset_topic and /start__topic
+     * 
+     * @param msg 
+     */
     void callback(const std_msgs::String &msg);
+
+    /**
+     * @brief Publish in /still_alive each time the timer rings
+     * 
+     * @param event 
+     */
     void timerCallback(const ros::TimerEvent &event);
+
+    /**
+     * @brief Prints the time in Local and UTC format
+     * 
+     */
     void imprimirHora(void);
     
 public:
