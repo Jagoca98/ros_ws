@@ -91,6 +91,28 @@ This message contains the user's position in 3D space. It has the following fiel
 
 ----
 
+## 🔨 Build 🔨
+
+To build from source, clone the latest version from this repository:
+
+```bash
+git clone https://github.com/Jagoca98/ros_ws.git
+cd ros_ws
+rosdep install --from-paths . --ignore-src
+```
+ and compile the package using either of the following:
+
+- `Catkin make`
+```bash
+catkin_make
+source devel/setup.bash
+```
+- `Catkin build`
+```bash
+catkin build
+source devel/setup.bash
+```
+
 ## 🚀 Launch Files 🚀
 
 The Interaccion project includes the following launch file:
@@ -101,4 +123,4 @@ This launch file starts all of the nodes in the Interaccion project. To start th
 
 ```bash
 roslaunch interaccion interaccion.launch
-
+```
